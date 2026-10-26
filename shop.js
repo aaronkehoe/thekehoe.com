@@ -10,22 +10,22 @@ var INQUIRY_EMAIL = 'aaronkehoe@gmail.com';
 // Each print is one Shopify product (by handle) with two options:
 // Size (8x10, 11x14, ...) and Frame (Unframed, Framed).
 var PRINTS = [
-  { handle: 'print-01', title: 'Print No. 01', img: 'assets/photos/01.jpg', alt: 'Hoover Tower and fountain seen through a dark window frame, black and white' },
-  { handle: 'print-02', title: 'Print No. 02', img: 'assets/photos/02.jpg', alt: 'Rocky coastline under a starry night sky, long exposure, black and white' },
-  { handle: 'print-03', title: 'Print No. 03', img: 'assets/photos/03.jpg', alt: 'Gloved hand lifting a wafer carrier from cleanroom equipment, black and white' },
-  { handle: 'print-04', title: 'Print No. 04', img: 'assets/photos/04.jpg', alt: 'Scientist in a cleanroom suit looking through a microscope, black and white' },
-  { handle: 'print-05', title: 'Print No. 05', img: 'assets/photos/05.jpg', alt: 'Group in cleanroom suits walking through a fabrication lab, black and white' },
-  { handle: 'print-06', title: 'Print No. 06', img: 'assets/photos/06.jpg', alt: 'Three gloved hands holding up silicon wafers, black and white' },
-  { handle: 'print-07', title: 'Print No. 07', img: 'assets/photos/07.jpg', alt: 'Painter at an easel on a rocky shoreline, black and white' },
-  { handle: 'print-08', title: 'Print No. 08', img: 'assets/photos/08.jpg', alt: 'Man standing on a stairway beside a large triangular map artwork, black and white' },
-  { handle: 'print-09', title: 'Print No. 09', img: 'assets/photos/09.jpg', alt: 'Sunset sky over an empty soccer field with stadium lights' },
-  { handle: 'print-10', title: 'Print No. 10', img: 'assets/photos/10.jpg', alt: 'Palm-lined walkway under a pink sunset sky, with a domed tower behind' },
-  { handle: 'print-11', title: 'Print No. 11', img: 'assets/photos/11.jpg', alt: 'Cyclist riding past a stone archway with palm trees, black and white' },
-  { handle: 'print-12', title: 'Print No. 12', img: 'assets/photos/12.jpg', alt: 'Close-up of honeybees at the entrance of a hive' },
-  { handle: 'print-13', title: 'Print No. 13', img: 'assets/photos/13.jpg', alt: 'Tower Bridge framed through a chain-link fence, black and white' },
-  { handle: 'print-14', title: 'Print No. 14', img: 'assets/photos/14.jpg', alt: 'Rocky shoreline at dusk under an overcast sky, black and white' },
-  { handle: 'print-15', title: 'Print No. 15', img: 'assets/photos/15.jpg', alt: 'White building at dusk beside a shop window strung with lights' },
-  { handle: 'print-16', title: 'Print No. 16', img: 'assets/photos/16.jpg', alt: 'Golden Gate Bridge reflected in still water under a blue sky' }
+  { handle: 'print-01', title: 'Fine Art Print - No. 1', img: 'assets/photos/01.jpg', alt: 'Hoover Tower and fountain seen through a dark window frame, black and white' },
+  { handle: 'print-02', title: 'Fine Art Print - No. 2', img: 'assets/photos/02.jpg', alt: 'Rocky coastline under a starry night sky, long exposure, black and white' },
+  { handle: 'print-03', title: 'Fine Art Print - No. 3', img: 'assets/photos/03.jpg', alt: 'Gloved hand lifting a wafer carrier from cleanroom equipment, black and white' },
+  { handle: 'print-04', title: 'Fine Art Print - No. 4', img: 'assets/photos/04.jpg', alt: 'Scientist in a cleanroom suit looking through a microscope, black and white' },
+  { handle: 'print-05', title: 'Fine Art Print - No. 5', img: 'assets/photos/05.jpg', alt: 'Group in cleanroom suits walking through a fabrication lab, black and white' },
+  { handle: 'print-06', title: 'Fine Art Print - No. 6', img: 'assets/photos/06.jpg', alt: 'Three gloved hands holding up silicon wafers, black and white' },
+  { handle: 'print-07', title: 'Fine Art Print - No. 7', img: 'assets/photos/07.jpg', alt: 'Painter at an easel on a rocky shoreline, black and white' },
+  { handle: 'print-08', title: 'Fine Art Print - No. 8', img: 'assets/photos/08.jpg', alt: 'Man standing on a stairway beside a large triangular map artwork, black and white' },
+  { handle: 'print-09', title: 'Fine Art Print - No. 9', img: 'assets/photos/09.jpg', alt: 'Sunset sky over an empty soccer field with stadium lights' },
+  { handle: 'print-10', title: 'Fine Art Print - No. 10', img: 'assets/photos/10.jpg', alt: 'Palm-lined walkway under a pink sunset sky, with a domed tower behind' },
+  { handle: 'print-11', title: 'Fine Art Print - No. 11', img: 'assets/photos/11.jpg', alt: 'Cyclist riding past a stone archway with palm trees, black and white' },
+  { handle: 'print-12', title: 'Fine Art Print - No. 12', img: 'assets/photos/12.jpg', alt: 'Close-up of honeybees at the entrance of a hive' },
+  { handle: 'print-13', title: 'Fine Art Print - No. 13', img: 'assets/photos/13.jpg', alt: 'Tower Bridge framed through a chain-link fence, black and white' },
+  { handle: 'print-14', title: 'Fine Art Print - No. 14', img: 'assets/photos/14.jpg', alt: 'Rocky shoreline at dusk under an overcast sky, black and white' },
+  { handle: 'print-15', title: 'Fine Art Print - No. 15', img: 'assets/photos/15.jpg', alt: 'White building at dusk beside a shop window strung with lights' },
+  { handle: 'print-16', title: 'Fine Art Print - No. 16', img: 'assets/photos/16.jpg', alt: 'Golden Gate Bridge reflected in still water under a blue sky' }
 ];
 
 var SIZES = [

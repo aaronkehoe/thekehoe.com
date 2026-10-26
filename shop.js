@@ -53,7 +53,8 @@ var PRINTS = [
   { handle: 'print-41', title: 'Fine Art Print - No. 41', img: 'assets/photos/41.jpg', alt: 'Three men posing on the balcony of a modern building, black and white' },
   { handle: 'print-42', title: 'Fine Art Print - No. 42', img: 'assets/photos/42.jpg', alt: 'Person climbing a curved concrete stairway, black and white' },
   { handle: 'print-43', title: 'Fine Art Print - No. 43', img: 'assets/photos/43.jpg', alt: 'Figure beside curved glass windows in a dark hall, black and white' },
-  { handle: 'print-44', title: 'Fine Art Print - No. 44', img: 'assets/photos/44.jpg', alt: 'Two men smiling outdoors on a sunny walkway, black and white' }
+  { handle: 'print-44', title: 'Fine Art Print - No. 44', img: 'assets/photos/44.jpg', alt: 'Two men smiling outdoors on a sunny walkway, black and white' },
+  { handle: 'print-45', title: 'Fine Art Print - No. 45', img: 'assets/photos/45.jpg', alt: 'Runners in silhouette passing a puddle under a pink and violet dusk sky' }
 ];
 
 var SIZES = [

@@ -69,7 +69,8 @@ h1, h2, h3 { font-family: Syne, Inter, sans-serif; line-height: 1.02; margin: 0;
 
 /* Print shop */
 #prints .section-head { margin-bottom: 40px; }
-#prints { max-width: 1480px; }
+#prints { max-width: 1480px; padding-top: clamp(24px, 3vw, 40px); }
+.hero { padding-bottom: clamp(32px, 4vw, 56px); }
 .prints { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--line) transparent; padding-right: 8px; }
 .prints::-webkit-scrollbar { width: 6px; }
 .prints::-webkit-scrollbar-thumb { background: var(--line); border-radius: 3px; }

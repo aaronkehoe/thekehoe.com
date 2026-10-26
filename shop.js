@@ -85,6 +85,22 @@ var SIZES = [
     grid.appendChild(card);
   });
 
+  // Show three rows at a time; the rest of the collection scrolls inside the frame
+  function fitGrid() {
+    var card = grid.querySelector('.print');
+    if (!card) return;
+    var gap = parseFloat(getComputedStyle(grid).rowGap) || 0;
+    grid.style.maxHeight = (card.offsetHeight * 3 + gap * 2) + 'px';
+    moreHint();
+  }
+  function moreHint() {
+    grid.classList.toggle('more', grid.scrollTop + grid.clientHeight < grid.scrollHeight - 4);
+  }
+  fitGrid();
+  window.addEventListener('resize', fitGrid);
+  window.addEventListener('load', fitGrid);
+  grid.addEventListener('scroll', moreHint, { passive: true });
+
   // Size and price list inside the preview: one row per size, one button per finish
   var sizeWrap = dlg.querySelector('.size-list');
   SIZES.forEach(function (s) {

@@ -70,8 +70,13 @@ h1, h2, h3 { font-family: Syne, Inter, sans-serif; line-height: 1.02; margin: 0;
 /* Print shop */
 #prints .section-head { margin-bottom: 40px; }
 #prints { max-width: 1480px; }
-.prints { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-@media (max-width: 1000px) { .prints { grid-template-columns: repeat(2, 1fr); } }
+.prints { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--line) transparent; padding-right: 8px; }
+.prints::-webkit-scrollbar { width: 6px; }
+.prints::-webkit-scrollbar-thumb { background: var(--line); border-radius: 3px; }
+/* Size the frame so all nine fit on screen at once */
+@media (min-width: 761px) { .prints, #prints .section-head { width: min(100%, calc((74vh - 40px) * 4 / 3 + 48px)); margin-left: auto; margin-right: auto; } }
+/* Soft fade at the bottom while more prints are below */
+.prints.more { -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 56px), transparent); mask-image: linear-gradient(to bottom, #000 calc(100% - 56px), transparent); }
 .print { all: unset; cursor: zoom-in; display: block; }
 .print:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 .print-img { display: block; aspect-ratio: 4 / 3; }
@@ -150,7 +155,8 @@ h1, h2, h3 { font-family: Syne, Inter, sans-serif; line-height: 1.02; margin: 0;
   .grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 180px; }
   .t-wide { grid-column: span 2; }
   .videos, .services { grid-template-columns: 1fr; }
-  .prints { grid-template-columns: 1fr; }
+  .prints { gap: 8px; padding-right: 4px; }
+  .prints .tile { border-radius: 4px; }
   .dlg[open] { grid-template-columns: 1fr; overflow-y: auto; }
   .dlg-img { min-height: 260px; }
   .dlg-body { padding: 24px 20px; }

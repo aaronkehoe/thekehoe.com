@@ -31,11 +31,11 @@ var PRINTS = [
 var SIZES = [
   { size: '8x10',  framed: 450 },
   { size: '11x14', unframed: 950,  framed: 1200 },
-  { size: '16x20', unframed: 1500, framed: 1800 },
-  { size: '20x24', unframed: 2250, framed: 2625, edition: 250 },
-  { size: '20x30', unframed: 3000, framed: 3500, edition: 75 },
-  { size: '30x40', unframed: 4200, framed: 5100, edition: 75 },
-  { size: '40x50', unframed: 6000, framed: 7500, edition: 15 }
+  { size: '16x20', unframed: 1500, framed: 1700 },
+  { size: '20x24', unframed: 2250, framed: 2450, edition: 250 },
+  { size: '20x30', unframed: 3000, framed: 3300, edition: 75 },
+  { size: '30x40', unframed: 4200, framed: 4600, edition: 75 },
+  { size: '40x50', unframed: 6000, framed: 6500, edition: 15 }
 ];
 
 (function () {

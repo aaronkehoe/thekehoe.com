@@ -62,9 +62,11 @@
         <a class="link" href="https://www.linkedin.com/in/aaronkehoe/" target="_blank" rel="noopener">More on LinkedIn &rarr;</a>
       </div>
       <div class="videos">
-        <div class="video"><div class="play" aria-hidden="true"></div><span>Reel coming soon</span></div>
-        <div class="video"><div class="play" aria-hidden="true"></div><span>Project film</span></div>
-        <div class="video"><div class="play" aria-hidden="true"></div><span>Behind the scenes</span></div>
+        <a class="yt yt-main" href="https://www.youtube.com/watch?v=OQOptryxxuc" data-id="OQOptryxxuc" target="_blank" rel="noopener" aria-label="Play video 1"><img src="https://i.ytimg.com/vi/OQOptryxxuc/hqdefault.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></a>
+        <a class="yt" href="https://www.youtube.com/watch?v=qMfjvQuLgjM" data-id="qMfjvQuLgjM" target="_blank" rel="noopener" aria-label="Play video 2"><img src="https://i.ytimg.com/vi/qMfjvQuLgjM/hqdefault.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></a>
+        <a class="yt" href="https://www.youtube.com/watch?v=h2m1G3WSZwg" data-id="h2m1G3WSZwg" target="_blank" rel="noopener" aria-label="Play video 3"><img src="https://i.ytimg.com/vi/h2m1G3WSZwg/hqdefault.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></a>
+        <a class="yt" href="https://www.youtube.com/watch?v=x3y73-WyUxQ" data-id="x3y73-WyUxQ" target="_blank" rel="noopener" aria-label="Play video 4"><img src="https://i.ytimg.com/vi/x3y73-WyUxQ/hqdefault.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></a>
+        <a class="yt" href="https://www.youtube.com/watch?v=WNIDcT0Zdj4" data-id="WNIDcT0Zdj4" target="_blank" rel="noopener" aria-label="Play video 5"><img src="https://i.ytimg.com/vi/WNIDcT0Zdj4/hqdefault.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></a>
       </div>
     </section>
 
@@ -92,5 +94,18 @@
     <a href="#top">Back to top &uarr;</a>
   </footer>
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <script>
+    document.querySelectorAll('.yt').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        var f = document.createElement('iframe');
+        f.src = 'https://www.youtube-nocookie.com/embed/' + a.dataset.id + '?autoplay=1&rel=0';
+        f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+        f.allowFullscreen = true;
+        f.title = 'Video';
+        a.replaceWith(f);
+      });
+    });
+  </script>
 </body>
 </html>

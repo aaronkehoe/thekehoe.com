@@ -69,17 +69,16 @@ h1, h2, h3 { font-family: Syne, Inter, sans-serif; line-height: 1.02; margin: 0;
 /* Video */
 .dark { max-width: none; background: var(--ink); color: var(--paper); }
 .dark > * { max-width: var(--max); margin-left: auto; margin-right: auto; }
-.videos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-.video, .videos iframe, .videos video {
-  aspect-ratio: 16 / 9; width: 100%; border: 0; border-radius: 6px;
-}
-.video {
-  background: linear-gradient(135deg, #2A2826, #151413);
-  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px;
-  color: #A39E94; font-size: 14px;
-}
-.play { width: 56px; height: 56px; border-radius: 50%; border: 2px solid var(--accent); position: relative; }
-.play::after { content: ""; position: absolute; left: 22px; top: 17px; border-left: 16px solid var(--accent); border-top: 10px solid transparent; border-bottom: 10px solid transparent; }
+.videos { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.videos .yt-main, .videos iframe:first-child { grid-column: 1 / -1; }
+.yt, .videos iframe { aspect-ratio: 16 / 9; width: 100%; border: 0; border-radius: 6px; display: block; }
+.yt { position: relative; overflow: hidden; background: #1D1C1A; }
+.yt img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: .9; transition: transform .6s ease, opacity .3s; }
+.yt:hover img { transform: scale(1.03); opacity: 1; }
+.play { position: absolute; left: 50%; top: 50%; width: 64px; height: 64px; margin: -32px 0 0 -32px; border-radius: 50%; background: rgba(17,17,17,.55); border: 2px solid var(--accent); }
+.play::after { content: ""; position: absolute; left: 25px; top: 19px; border-left: 18px solid var(--accent); border-top: 11px solid transparent; border-bottom: 11px solid transparent; }
+.yt:hover .play { background: var(--accent); }
+.yt:hover .play::after { border-left-color: #fff; }
 
 /* Services */
 .services { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
@@ -103,4 +102,5 @@ h1, h2, h3 { font-family: Syne, Inter, sans-serif; line-height: 1.02; margin: 0;
   .grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 180px; }
   .t-wide { grid-column: span 2; }
   .videos, .services { grid-template-columns: 1fr; }
+  .play { transform: scale(.8); }
 }

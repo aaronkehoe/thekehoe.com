@@ -126,6 +126,8 @@ h1, h2, h3 { font-family: Syne, Inter, sans-serif; line-height: 1.02; margin: 0;
 .videos { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
 .videos .yt-main, .videos iframe:first-child { grid-column: 1 / -1; }
 .yt, .videos iframe { aspect-ratio: 16 / 9; width: 100%; border: 0; border-radius: 6px; display: block; }
+.clips { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 16px; }
+.clips video { aspect-ratio: 16 / 9; width: 100%; border-radius: 6px; display: block; background: #1D1C1A; }
 .yt { position: relative; overflow: hidden; background: #1D1C1A; }
 .yt img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: .9; transition: transform .6s ease, opacity .3s; }
 .yt:hover img { transform: scale(1.03); opacity: 1; }
@@ -155,7 +157,7 @@ h1, h2, h3 { font-family: Syne, Inter, sans-serif; line-height: 1.02; margin: 0;
   .nav nav a:not(.pill) { display: none; }
   .grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 180px; }
   .t-wide { grid-column: span 2; }
-  .videos, .services { grid-template-columns: 1fr; }
+  .videos, .services, .clips { grid-template-columns: 1fr; }
   .prints { gap: 8px; padding-right: 4px; }
   .prints .tile { border-radius: 4px; }
   .dlg[open] { grid-template-columns: 1fr; overflow-y: auto; }

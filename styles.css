@@ -67,6 +67,8 @@ h1, h2, h3 { font-family: Syne, Inter, sans-serif; line-height: 1.02; margin: 0;
 .t-wide { grid-column: span 2; }
 
 /* Print shop */
+#prints .section-head { margin-bottom: 24px; }
+#prints .section-head h2 { font-size: clamp(20px, 2.4vw, 28px); }
 .prints { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 @media (max-width: 1000px) { .prints { grid-template-columns: repeat(3, 1fr); } }
 .print { all: unset; cursor: zoom-in; display: block; }

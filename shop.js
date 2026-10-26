@@ -25,7 +25,14 @@ var PRINTS = [
   { handle: 'print-13', title: 'Fine Art Print - No. 13', img: 'assets/photos/13.jpg', alt: 'Tower Bridge framed through a chain-link fence, black and white' },
   { handle: 'print-14', title: 'Fine Art Print - No. 14', img: 'assets/photos/14.jpg', alt: 'Rocky shoreline at dusk under an overcast sky, black and white' },
   { handle: 'print-15', title: 'Fine Art Print - No. 15', img: 'assets/photos/15.jpg', alt: 'White building at dusk beside a shop window strung with lights' },
-  { handle: 'print-16', title: 'Fine Art Print - No. 16', img: 'assets/photos/16.jpg', alt: 'Golden Gate Bridge reflected in still water under a blue sky' }
+  { handle: 'print-16', title: 'Fine Art Print - No. 16', img: 'assets/photos/16.jpg', alt: 'Golden Gate Bridge reflected in still water under a blue sky' },
+  { handle: 'print-17', title: 'Fine Art Print - No. 17', img: 'assets/photos/17.jpg', alt: 'Twilight over oak-dotted hills above a lake' },
+  { handle: 'print-18', title: 'Fine Art Print - No. 18', img: 'assets/photos/18.jpg', alt: 'Tents on a lawn in front of a lit Spanish-style building at dusk' },
+  { handle: 'print-19', title: 'Fine Art Print - No. 19', img: 'assets/photos/19.jpg', alt: 'Stars over a rocky shoreline at night, black and white' },
+  { handle: 'print-20', title: 'Fine Art Print - No. 20', img: 'assets/photos/20.jpg', alt: 'Reflection in the curved fender of a vintage car, black and white' },
+  { handle: 'print-21', title: 'Fine Art Print - No. 21', img: 'assets/photos/21.jpg', alt: 'Coach pointing skyward on a practice field under a blue sky' },
+  { handle: 'print-22', title: 'Fine Art Print - No. 22', img: 'assets/photos/22.jpg', alt: 'Close-up of sea foam on a beach with hills beyond, black and white' },
+  { handle: 'print-23', title: 'Fine Art Print - No. 23', img: 'assets/photos/23.jpg', alt: 'Oak tree silhouetted by sunrise over a misty field of mustard flowers' }
 ];
 
 var SIZES = [

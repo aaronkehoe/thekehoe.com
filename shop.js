@@ -10,7 +10,7 @@ var INQUIRY_EMAIL = 'aaronkehoe@gmail.com';
 // Each print is one Shopify product (by handle) with two options:
 // Size (8x10, 11x14, ...) and Frame (Unframed, Framed).
 var PRINTS = [
-  { handle: 'print-01', title: 'Print No. 01', img: 'assets/photos/01.jpg' },
+  { handle: 'print-01', title: 'Print No. 01', img: 'assets/photos/01.jpg', alt: 'Hoover Tower and fountain seen through a dark window frame, black and white' },
   { handle: 'print-02', title: 'Print No. 02', img: 'assets/photos/02.jpg' },
   { handle: 'print-03', title: 'Print No. 03', img: 'assets/photos/03.jpg' },
   { handle: 'print-04', title: 'Print No. 04', img: 'assets/photos/04.jpg' },
@@ -40,7 +40,7 @@ var SIZES = [
     card.className = 'print';
     card.type = 'button';
     card.innerHTML =
-      '<span class="print-img tile"><img src="' + p.img + '" alt="" loading="lazy" onerror="this.remove()"></span>' +
+      '<span class="print-img tile"><img src="' + p.img + '" alt="' + (p.alt || '') + '" loading="lazy" onload="this.parentNode.classList.add(\'has-img\')" onerror="this.remove()"></span>' +
       '<span class="print-meta"><span class="print-title">' + p.title + '</span>' +
       '<span class="print-from">View sizes</span></span>';
     card.addEventListener('click', function () { open(i); });
@@ -81,7 +81,8 @@ var SIZES = [
     state.frame = 'framed';
     state.variants = null;
     var img = dlg.querySelector('.dlg-img');
-    img.innerHTML = '<img src="' + state.print.img + '" alt="" onerror="this.remove()">';
+    img.classList.remove('has-img');
+    img.innerHTML = '<img src="' + state.print.img + '" alt="' + (state.print.alt || '') + '" onload="this.parentNode.classList.add(\'has-img\')" onerror="this.remove()">';
     dlg.querySelector('.dlg-title').textContent = state.print.title;
     render();
     dlg.showModal();

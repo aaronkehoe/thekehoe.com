@@ -70,11 +70,17 @@ h1, h2, h3 { font-family: Syne, Inter, sans-serif; line-height: 1.02; margin: 0;
 .prints { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px 16px; }
 .print { all: unset; cursor: pointer; display: flex; flex-direction: column; gap: 12px; }
 .print:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
-.print-img { display: block; aspect-ratio: 4 / 5; }
+.print-img { display: block; aspect-ratio: 1 / 1; }
 .print-meta { display: flex; justify-content: space-between; gap: 12px; font-size: 15px; }
 .print-title { font-weight: 600; }
 .print-from { color: var(--muted); }
 .print:hover .print-title { color: var(--accent); }
+/* Real photos are shown whole, matted, never cropped */
+.tile.has-img { background: #E9E5DC; }
+.tile.has-img img { object-fit: contain; padding: 6%; }
+.print:hover .tile.has-img img { transform: scale(1.02); }
+.dlg-img.has-img { background: #1A1918; }
+.dlg-img.has-img img { padding: 24px; }
 
 .note { color: var(--muted); font-size: 14px; margin: 16px 0 0; }
 

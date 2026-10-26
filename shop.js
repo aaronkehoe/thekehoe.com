@@ -35,7 +35,6 @@ var SIZES = [
   var dlg = document.getElementById('print-dialog');
   var state = { print: null, size: null, frame: 'framed', variants: null };
 
-  var lowest = Math.min.apply(null, SIZES.map(function (s) { return s.unframed || s.framed; }));
   PRINTS.forEach(function (p, i) {
     var card = document.createElement('button');
     card.className = 'print';
@@ -43,33 +42,34 @@ var SIZES = [
     card.innerHTML =
       '<span class="print-img tile"><img src="' + p.img + '" alt="" loading="lazy" onerror="this.remove()"></span>' +
       '<span class="print-meta"><span class="print-title">' + p.title + '</span>' +
-      '<span class="print-from">From ' + money(lowest) + '</span></span>';
+      '<span class="print-from">View sizes</span></span>';
     card.addEventListener('click', function () { open(i); });
     grid.appendChild(card);
   });
 
-  var tbody = document.getElementById('price-rows');
+  // Size and price list inside the preview: one row per size, one button per finish
+  var sizeWrap = dlg.querySelector('.size-list');
   SIZES.forEach(function (s) {
-    var tr = document.createElement('tr');
-    tr.innerHTML = '<td>' + s.size.replace('x', ' × ') + ' in</td>' +
-      '<td>' + (s.unframed ? money(s.unframed) : '—') + '</td>' +
-      '<td>' + money(s.framed) + '</td>' +
-      '<td>' + (s.edition ? 'Edition of ' + s.edition : 'Open edition') + '</td>';
-    tbody.appendChild(tr);
-  });
-
-  var sizeWrap = dlg.querySelector('.opt-sizes');
-  SIZES.forEach(function (s) {
-    var b = document.createElement('button');
-    b.type = 'button';
-    b.className = 'chip';
-    b.textContent = s.size.replace('x', ' × ');
-    b.dataset.size = s.size;
-    b.addEventListener('click', function () { state.size = s; render(); });
-    sizeWrap.appendChild(b);
-  });
-  dlg.querySelectorAll('[data-frame]').forEach(function (b) {
-    b.addEventListener('click', function () { if (!b.disabled) { state.frame = b.dataset.frame; render(); } });
+    var row = document.createElement('div');
+    row.className = 'size-row';
+    row.innerHTML = '<span class="size-name">' + s.size.replace('x', ' × ') + ' in' +
+      '<small>' + (s.edition ? 'Edition of ' + s.edition : 'Open edition') + '</small></span>';
+    ['unframed', 'framed'].forEach(function (f) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'price-opt';
+      b.dataset.size = s.size;
+      b.dataset.frame = f;
+      if (s[f]) {
+        b.innerHTML = '<small>' + (f === 'framed' ? 'Framed' : 'Print') + '</small>' + money(s[f]);
+        b.addEventListener('click', function () { state.size = s; state.frame = f; render(); });
+      } else {
+        b.disabled = true;
+        b.innerHTML = '<small>Print</small>Framed only';
+      }
+      row.appendChild(b);
+    });
+    sizeWrap.appendChild(row);
   });
   dlg.querySelector('.close').addEventListener('click', function () { dlg.close(); });
   dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
@@ -101,17 +101,12 @@ var SIZES = [
   function render() {
     var s = state.size;
     if (!s.unframed) state.frame = 'framed';
-    sizeWrap.querySelectorAll('.chip').forEach(function (b) {
-      b.classList.toggle('on', b.dataset.size === s.size);
+    sizeWrap.querySelectorAll('.price-opt').forEach(function (b) {
+      b.classList.toggle('on', b.dataset.size === s.size && b.dataset.frame === state.frame);
     });
-    dlg.querySelectorAll('[data-frame]').forEach(function (b) {
-      b.disabled = b.dataset.frame === 'unframed' && !s.unframed;
-      b.classList.toggle('on', b.dataset.frame === state.frame);
-    });
+    dlg.querySelector('.dlg-choice').textContent = s.size.replace('x', ' × ') + ' in, ' +
+      (state.frame === 'framed' ? 'framed' : 'print only') + (s.edition ? ', edition of ' + s.edition : '');
     dlg.querySelector('.dlg-price').textContent = money(s[state.frame]);
-    dlg.querySelector('.dlg-edition').textContent = s.edition
-      ? 'Limited edition of ' + s.edition
-      : 'Open edition';
     var buy = dlg.querySelector('.buy');
     var v = variantFor();
     var soldOut = v && !v.availableForSale;

@@ -45,20 +45,8 @@
           <p class="eyebrow">Shop</p>
           <h2>Fine art prints</h2>
         </div>
-        <a class="link" href="#pricing">Sizes and pricing &darr;</a>
       </div>
       <div class="prints" id="print-grid"></div>
-
-      <div class="pricing" id="pricing">
-        <h3>Sizes and pricing</h3>
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th>Size</th><th>Print</th><th>Framed</th><th>Edition</th></tr></thead>
-            <tbody id="price-rows"></tbody>
-          </table>
-        </div>
-        <p class="note">Prices in USD. Sales tax, shipping and handling are calculated at checkout.</p>
-      </div>
     </section>
 
     <dialog id="print-dialog" class="dlg" aria-label="Choose a print size">
@@ -66,15 +54,12 @@
       <div class="dlg-img tile"></div>
       <div class="dlg-body">
         <h3 class="dlg-title"></h3>
-        <p class="opt-label">Size (inches)</p>
-        <div class="opt-sizes"></div>
-        <p class="opt-label">Finish</p>
-        <div class="opt-frame">
-          <button type="button" class="chip" data-frame="unframed">Print only</button>
-          <button type="button" class="chip" data-frame="framed">Framed</button>
+        <p class="opt-label">Choose a size</p>
+        <div class="size-list"></div>
+        <div class="dlg-summary">
+          <span class="dlg-choice"></span>
+          <span class="dlg-price"></span>
         </div>
-        <p class="dlg-price"></p>
-        <p class="dlg-edition"></p>
         <button type="button" class="btn buy">Buy now</button>
         <p class="note">Tax, shipping and handling calculated at checkout.</p>
       </div>

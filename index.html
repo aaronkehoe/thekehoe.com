@@ -21,7 +21,7 @@
       <span class="wordmark"><small>THE</small>KEHOE</span>
     </a>
     <nav>
-      <a href="#work">Work</a>
+      <a href="#prints">Prints</a>
       <a href="#video">Video</a>
       <a href="#services">Services</a>
       <a href="#contact" class="pill">Contact</a>
@@ -34,27 +34,50 @@
       <p class="lede">Photography, video and creative direction for brands, artists and people with a story worth telling.</p>
       <div class="cta">
         <a class="btn" href="#contact">Start a project</a>
-        <a class="link" href="#work">See the work &rarr;</a>
+        <a class="link" href="#prints">Shop prints &rarr;</a>
       </div>
     </section>
 
-    <section id="work" class="section">
+    <section id="prints" class="section">
       <div class="section-head">
-        <h2>Selected work</h2>
-        <a class="link" href="https://www.instagram.com/the_kehoe" target="_blank" rel="noopener">More on Instagram &rarr;</a>
+        <div>
+          <p class="eyebrow">Shop</p>
+          <h2>Fine art prints</h2>
+        </div>
+        <a class="link" href="#pricing">Sizes and pricing &darr;</a>
       </div>
-      <div class="grid">
-        <figure class="tile t-tall"><img src="assets/photos/01.jpg" alt="" loading="lazy" onerror="this.remove()"></figure>
-        <figure class="tile"><img src="assets/photos/02.jpg" alt="" loading="lazy" onerror="this.remove()"></figure>
-        <figure class="tile"><img src="assets/photos/03.jpg" alt="" loading="lazy" onerror="this.remove()"></figure>
-        <figure class="tile t-wide"><img src="assets/photos/04.jpg" alt="" loading="lazy" onerror="this.remove()"></figure>
-        <figure class="tile"><img src="assets/photos/05.jpg" alt="" loading="lazy" onerror="this.remove()"></figure>
-        <figure class="tile t-tall"><img src="assets/photos/06.jpg" alt="" loading="lazy" onerror="this.remove()"></figure>
-        <figure class="tile"><img src="assets/photos/07.jpg" alt="" loading="lazy" onerror="this.remove()"></figure>
-        <figure class="tile"><img src="assets/photos/08.jpg" alt="" loading="lazy" onerror="this.remove()"></figure>
-        <figure class="tile t-wide"><img src="assets/photos/09.jpg" alt="" loading="lazy" onerror="this.remove()"></figure>
+      <div class="prints" id="print-grid"></div>
+
+      <div class="pricing" id="pricing">
+        <h3>Sizes and pricing</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Size</th><th>Print</th><th>Framed</th><th>Edition</th></tr></thead>
+            <tbody id="price-rows"></tbody>
+          </table>
+        </div>
+        <p class="note">Prices in USD. Sales tax, shipping and handling are calculated at checkout.</p>
       </div>
     </section>
+
+    <dialog id="print-dialog" class="dlg" aria-label="Choose a print size">
+      <button class="close" type="button" aria-label="Close">&times;</button>
+      <div class="dlg-img tile"></div>
+      <div class="dlg-body">
+        <h3 class="dlg-title"></h3>
+        <p class="opt-label">Size (inches)</p>
+        <div class="opt-sizes"></div>
+        <p class="opt-label">Finish</p>
+        <div class="opt-frame">
+          <button type="button" class="chip" data-frame="unframed">Print only</button>
+          <button type="button" class="chip" data-frame="framed">Framed</button>
+        </div>
+        <p class="dlg-price"></p>
+        <p class="dlg-edition"></p>
+        <button type="button" class="btn buy">Buy now</button>
+        <p class="note">Tax, shipping and handling calculated at checkout.</p>
+      </div>
+    </dialog>
 
     <section id="video" class="section dark">
       <div class="section-head">
@@ -94,6 +117,7 @@
     <a href="#top">Back to top &uarr;</a>
   </footer>
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <script src="shop.js"></script>
   <script>
     document.querySelectorAll('.yt').forEach(function (a) {
       a.addEventListener('click', function (e) {

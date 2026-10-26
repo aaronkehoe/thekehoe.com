@@ -130,6 +130,8 @@ h1, h2, h3 { font-family: Syne, Inter, sans-serif; line-height: 1.02; margin: 0;
 .dark > * { max-width: var(--max); margin-left: auto; margin-right: auto; }
 .videos { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
 .videos .yt-main, .videos iframe:first-child { grid-column: 1 / -1; }
+/* A lone video in the last row spans the full width */
+.videos > :last-child:nth-child(even) { grid-column: 1 / -1; }
 .yt, .videos iframe { aspect-ratio: 16 / 9; width: 100%; border: 0; border-radius: 6px; display: block; }
 .clips { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 16px; }
 .clips video { aspect-ratio: 16 / 9; width: 100%; border-radius: 6px; display: block; background: #1D1C1A; }

@@ -48,7 +48,7 @@ var PRINTS = [
   { handle: 'print-36', title: 'Fine Art Print - No. 36', img: 'assets/photos/36.jpg', alt: 'Sandstone arcade with Hoover Tower and parked bicycles, black and white' },
   { handle: 'print-37', title: 'Fine Art Print - No. 37', img: 'assets/photos/37.jpg', alt: 'Couple walking past a lake in silhouette, black and white' },
   { handle: 'print-38', title: 'Fine Art Print - No. 38', img: 'assets/photos/38.jpg', alt: 'Vintage silver sports car parked under trees' },
-  { handle: 'print-39', title: 'Fine Art Print - No. 39', img: 'assets/photos/39.jpg', alt: 'Cyclist passing through a stone arcade, black and white' },
+  { handle: 'print-39', title: 'Fine Art Print - No. 39', img: 'assets/photos/39.jpg', alt: 'Cyclist in silhouette passing through a sandstone arcade under a blue sky' },
   { handle: 'print-40', title: 'Fine Art Print - No. 40', img: 'assets/photos/40.jpg', alt: 'Hoover Tower and a sandstone arcade at dusk' },
   { handle: 'print-41', title: 'Fine Art Print - No. 41', img: 'assets/photos/41.jpg', alt: 'Three men posing on the balcony of a modern building, black and white' },
   { handle: 'print-42', title: 'Fine Art Print - No. 42', img: 'assets/photos/42.jpg', alt: 'Person climbing a curved concrete stairway, black and white' },

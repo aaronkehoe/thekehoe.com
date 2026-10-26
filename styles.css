@@ -74,7 +74,7 @@ h1, h2, h3 { font-family: Syne, Inter, sans-serif; line-height: 1.02; margin: 0;
 .print-meta { display: flex; justify-content: space-between; gap: 12px; font-size: 15px; }
 .print-title { font-weight: 600; }
 .print-from { color: var(--muted); }
-.print:hover .print-title { color: var(--accent); }
+.print:hover .print-from { color: var(--accent); }
 /* Real photos are shown whole, matted, never cropped */
 .tile.has-img { background: #E9E5DC; }
 .tile.has-img img { object-fit: contain; padding: 6%; }

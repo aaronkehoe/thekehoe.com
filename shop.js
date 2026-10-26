@@ -39,10 +39,10 @@ var SIZES = [
     var card = document.createElement('button');
     card.className = 'print';
     card.type = 'button';
+    card.setAttribute('aria-label', p.title + ', view sizes');
     card.innerHTML =
       '<span class="print-img tile"><img src="' + p.img + '" alt="' + (p.alt || '') + '" loading="lazy" onload="this.parentNode.classList.add(\'has-img\')" onerror="this.remove()"></span>' +
-      '<span class="print-meta"><span class="print-title">' + p.title + '</span>' +
-      '<span class="print-from">View sizes</span></span>';
+      '<span class="print-meta"><span class="print-from">View sizes</span></span>';
     card.addEventListener('click', function () { open(i); });
     grid.appendChild(card);
   });

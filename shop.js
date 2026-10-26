@@ -32,7 +32,8 @@ var PRINTS = [
   { handle: 'print-20', title: 'Fine Art Print - No. 20', img: 'assets/photos/20.jpg', alt: 'Reflection in the curved fender of a vintage car, black and white' },
   { handle: 'print-21', title: 'Fine Art Print - No. 21', img: 'assets/photos/21.jpg', alt: 'Coach pointing skyward on a practice field under a blue sky' },
   { handle: 'print-22', title: 'Fine Art Print - No. 22', img: 'assets/photos/22.jpg', alt: 'Close-up of sea foam on a beach with hills beyond, black and white' },
-  { handle: 'print-23', title: 'Fine Art Print - No. 23', img: 'assets/photos/23.jpg', alt: 'Oak tree silhouetted by sunrise over a misty field of mustard flowers' }
+  { handle: 'print-23', title: 'Fine Art Print - No. 23', img: 'assets/photos/23.jpg', alt: 'Oak tree silhouetted by sunrise over a misty field of mustard flowers' },
+  { handle: 'print-24', title: 'Fine Art Print - No. 24', img: 'assets/photos/24.jpg', alt: 'Dorsal fin cutting through sunlit water, black and white' }
 ];
 
 var SIZES = [

@@ -11,11 +11,13 @@ var INQUIRY_EMAIL = 'aaronkehoe@gmail.com';
 // Size (8x10, 11x14, ...) and Frame (Unframed, Framed).
 var PRINTS = [
   { handle: 'print-01', title: 'Print No. 01', img: 'assets/photos/01.jpg', alt: 'Hoover Tower and fountain seen through a dark window frame, black and white' },
-  { handle: 'print-02', title: 'Print No. 02', img: 'assets/photos/02.jpg' },
-  { handle: 'print-03', title: 'Print No. 03', img: 'assets/photos/03.jpg' },
-  { handle: 'print-04', title: 'Print No. 04', img: 'assets/photos/04.jpg' },
-  { handle: 'print-05', title: 'Print No. 05', img: 'assets/photos/05.jpg' },
-  { handle: 'print-06', title: 'Print No. 06', img: 'assets/photos/06.jpg' }
+  { handle: 'print-02', title: 'Print No. 02', img: 'assets/photos/02.jpg', alt: 'Rocky coastline under a starry night sky, long exposure, black and white' },
+  { handle: 'print-03', title: 'Print No. 03', img: 'assets/photos/03.jpg', alt: 'Gloved hand lifting a wafer carrier from cleanroom equipment, black and white' },
+  { handle: 'print-04', title: 'Print No. 04', img: 'assets/photos/04.jpg', alt: 'Scientist in a cleanroom suit looking through a microscope, black and white' },
+  { handle: 'print-05', title: 'Print No. 05', img: 'assets/photos/05.jpg', alt: 'Group in cleanroom suits walking through a fabrication lab, black and white' },
+  { handle: 'print-06', title: 'Print No. 06', img: 'assets/photos/06.jpg', alt: 'Three gloved hands holding up silicon wafers, black and white' },
+  { handle: 'print-07', title: 'Print No. 07', img: 'assets/photos/07.jpg', alt: 'Painter at an easel on a rocky shoreline, black and white' },
+  { handle: 'print-08', title: 'Print No. 08', img: 'assets/photos/08.jpg', alt: 'Man standing on a stairway beside a large triangular map artwork, black and white' }
 ];
 
 var SIZES = [

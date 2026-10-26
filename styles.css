@@ -67,10 +67,11 @@ h1, h2, h3 { font-family: Syne, Inter, sans-serif; line-height: 1.02; margin: 0;
 .t-wide { grid-column: span 2; }
 
 /* Print shop */
-.prints { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px 16px; }
+.prints { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px 16px; }
+@media (max-width: 1000px) { .prints { grid-template-columns: repeat(3, 1fr); } }
 .print { all: unset; cursor: pointer; display: flex; flex-direction: column; gap: 12px; }
 .print:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
-.print-img { display: block; aspect-ratio: 1 / 1; }
+.print-img { display: block; aspect-ratio: 4 / 3; }
 .print-meta { display: flex; justify-content: space-between; gap: 12px; font-size: 15px; }
 .print-title { font-weight: 600; }
 .print-from { color: var(--muted); }

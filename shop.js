@@ -101,29 +101,22 @@ var SIZES = [
   window.addEventListener('load', fitGrid);
   grid.addEventListener('scroll', moreHint, { passive: true });
 
-  // Size and price list inside the preview: one row per size, one button per finish
-  var sizeWrap = dlg.querySelector('.size-list');
-  SIZES.forEach(function (s) {
-    var row = document.createElement('div');
-    row.className = 'size-row';
-    row.innerHTML = '<span class="size-name">' + s.size.replace('x', ' × ') + ' in' +
-      '<small>' + (s.edition ? 'Edition of ' + s.edition : 'Open edition') + '</small></span>';
+  // Size and price picker inside the preview: one option per size and finish
+  var picker = dlg.querySelector('.size-select');
+  SIZES.forEach(function (sz, i) {
     ['unframed', 'framed'].forEach(function (f) {
-      var b = document.createElement('button');
-      b.type = 'button';
-      b.className = 'price-opt';
-      b.dataset.size = s.size;
-      b.dataset.frame = f;
-      if (s[f]) {
-        b.innerHTML = '<small>' + (f === 'framed' ? 'Framed' : 'Print') + '</small>' + money(s[f]);
-        b.addEventListener('click', function () { state.size = s; state.frame = f; render(); });
-      } else {
-        b.disabled = true;
-        b.innerHTML = '<small>Print</small>Framed only';
-      }
-      row.appendChild(b);
+      if (!sz[f]) return;
+      var o = document.createElement('option');
+      o.value = i + ':' + f;
+      o.textContent = sz.size.replace('x', ' × ') + ' in  ·  ' + (f === 'framed' ? 'Framed' : 'Print') + '  ·  ' + money(sz[f]);
+      picker.appendChild(o);
     });
-    sizeWrap.appendChild(row);
+  });
+  picker.addEventListener('change', function () {
+    var v = picker.value.split(':');
+    state.size = SIZES[+v[0]];
+    state.frame = v[1];
+    render();
   });
   dlg.querySelector('.close').addEventListener('click', function () { dlg.close(); });
   dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
@@ -184,9 +177,7 @@ var SIZES = [
   function render() {
     var s = state.size;
     if (!s.unframed) state.frame = 'framed';
-    sizeWrap.querySelectorAll('.price-opt').forEach(function (b) {
-      b.classList.toggle('on', b.dataset.size === s.size && b.dataset.frame === state.frame);
-    });
+    picker.value = SIZES.indexOf(s) + ':' + state.frame;
     dlg.querySelector('.dlg-choice').textContent = s.size.replace('x', ' × ') + ' in, ' +
       (state.frame === 'framed' ? 'framed' : 'print only') + (s.edition ? ', edition of ' + s.edition : '');
     dlg.querySelector('.dlg-price').textContent = money(s[state.frame]);

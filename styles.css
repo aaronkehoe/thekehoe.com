@@ -96,14 +96,19 @@ h1, h2, h3 { font-family: Syne, Inter, sans-serif; line-height: 1.02; margin: 0;
 .note { color: var(--muted); font-size: 14px; margin: 16px 0 0; }
 
 .dlg { border: 0; padding: 0; border-radius: 10px; width: min(1400px, calc(100vw - 32px)); max-height: calc(100vh - 32px); overflow-y: auto; background: var(--paper); color: var(--ink); display: none; }
-.dlg[open] { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(340px, 1fr); }
+.dlg[open] { display: grid; grid-template-columns: minmax(0, 1fr) 320px; }
 .dlg::backdrop { background: rgba(17,17,17,.6); backdrop-filter: blur(4px); }
-.dlg-img { min-height: 420px; border-radius: 0; }
+.dlg-img { min-height: min(78vh, 760px); border-radius: 0; }
 .dlg-body { padding: 28px; font-size: 14px; }
 .dlg[open] { position: fixed; }
 .dlg-title { font-size: 20px; margin-bottom: 2px; padding-right: 40px; }
 .close { position: absolute; top: 12px; right: 12px; z-index: 1; width: 36px; height: 36px; border: 0; border-radius: 50%; background: var(--paper); color: var(--ink); font-size: 26px; line-height: 1; cursor: pointer; }
 .opt-label { font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin: 18px 0 8px; }
+.select-wrap { position: relative; }
+.select-wrap::after { content: ""; position: absolute; right: 14px; top: 50%; width: 7px; height: 7px; margin-top: -6px; border-right: 1.5px solid var(--ink); border-bottom: 1.5px solid var(--ink); transform: rotate(45deg); pointer-events: none; }
+.size-select { width: 100%; appearance: none; -webkit-appearance: none; background: transparent; color: var(--ink); border: 1.5px solid var(--line); border-radius: 8px; padding: 10px 36px 10px 12px; font: 500 13px Inter, sans-serif; cursor: pointer; }
+.size-select:hover, .size-select:focus { border-color: var(--ink); outline: none; }
+.dlg-body { display: flex; flex-direction: column; justify-content: center; }
 .size-list { display: flex; flex-direction: column; border-top: 1px solid var(--line); }
 .size-row { display: grid; grid-template-columns: 1fr auto auto; gap: 6px; align-items: center; padding: 6px 0; border-bottom: 1px solid var(--line); }
 .size-name { font-weight: 600; font-size: 13px; display: flex; flex-direction: column; }

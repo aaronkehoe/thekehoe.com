@@ -81,8 +81,9 @@ h1, h2, h3 { font-family: Syne, Inter, sans-serif; line-height: 1.02; margin: 0;
 .print:hover .tile.has-img img { transform: scale(1.02); }
 .dlg-img.has-img { background: #1A1918; }
 .dlg-img.has-img img { padding: 16px; }
-.step { position: absolute; top: 50%; z-index: 1; width: 44px; height: 44px; margin-top: -22px; border: 0; border-radius: 50%; background: rgba(244,241,234,.88); color: var(--ink); font-size: 30px; line-height: 1; padding-bottom: 4px; cursor: pointer; transition: background .2s; }
-.step:hover { background: var(--paper); color: var(--accent); }
+.step { position: absolute; top: 50%; z-index: 1; width: 44px; height: 44px; margin-top: -22px; border: 0; border-radius: 50%; background: transparent; color: rgba(244,241,234,.35); font-size: 34px; line-height: 1; padding-bottom: 4px; cursor: pointer; transition: color .2s; }
+.step:hover, .step:focus-visible { color: rgba(244,241,234,.9); }
+.step:focus { outline: none; }
 .step.prev { left: 14px; }
 .step.next { right: 14px; }
 

@@ -63,6 +63,7 @@ h1, h2, h3 { font-family: Syne, Inter, sans-serif; line-height: 1.02; margin: 0;
 .tile:nth-child(3n+2) { background-color: #2A2826; background-image: url("assets/logo-tile-light.png"), linear-gradient(135deg, #3A3733, #1D1C1A); }
 .tile img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s ease; }
 .tile:hover img { transform: scale(1.04); }
+.dlg-img:hover img { transform: none; }
 .t-tall { grid-row: span 2; }
 .t-wide { grid-column: span 2; }
 
@@ -80,6 +81,10 @@ h1, h2, h3 { font-family: Syne, Inter, sans-serif; line-height: 1.02; margin: 0;
 .print:hover .tile.has-img img { transform: scale(1.02); }
 .dlg-img.has-img { background: #1A1918; }
 .dlg-img.has-img img { padding: 16px; }
+.step { position: absolute; top: 50%; z-index: 1; width: 44px; height: 44px; margin-top: -22px; border: 0; border-radius: 50%; background: rgba(244,241,234,.88); color: var(--ink); font-size: 30px; line-height: 1; padding-bottom: 4px; cursor: pointer; transition: background .2s; }
+.step:hover { background: var(--paper); color: var(--accent); }
+.step.prev { left: 14px; }
+.step.next { right: 14px; }
 
 .note { color: var(--muted); font-size: 14px; margin: 16px 0 0; }
 

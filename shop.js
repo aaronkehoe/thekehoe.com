@@ -51,7 +51,7 @@ var SIZES = [
   var configured = SHOPIFY.domain && SHOPIFY.storefrontToken;
   var grid = document.getElementById('print-grid');
   var dlg = document.getElementById('print-dialog');
-  var state = { print: null, size: null, frame: 'framed', variants: null };
+  var state = { index: 0, print: null, size: null, frame: 'framed', variants: null };
 
   PRINTS.forEach(function (p, i) {
     var card = document.createElement('button');
@@ -92,17 +92,45 @@ var SIZES = [
   dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
   dlg.querySelector('.buy').addEventListener('click', buy);
 
+  // Browse prints without leaving the preview: arrows, arrow keys, or swipe
+  var step = function (d) { open((state.index + d + PRINTS.length) % PRINTS.length); };
+  dlg.querySelector('.prev').addEventListener('click', function () { step(-1); });
+  dlg.querySelector('.next').addEventListener('click', function () { step(1); });
+  dlg.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft') { e.preventDefault(); step(-1); }
+    if (e.key === 'ArrowRight') { e.preventDefault(); step(1); }
+  });
+  var touchX = null;
+  var stage = dlg.querySelector('.dlg-img');
+  stage.addEventListener('touchstart', function (e) { touchX = e.touches[0].clientX; }, { passive: true });
+  stage.addEventListener('touchend', function (e) {
+    if (touchX === null) return;
+    var dx = e.changedTouches[0].clientX - touchX;
+    touchX = null;
+    if (Math.abs(dx) > 40) step(dx < 0 ? 1 : -1);
+  });
+
   function open(i) {
+    // Keep the chosen size and finish while browsing; reset only on a fresh open
+    if (!dlg.open) { state.size = SIZES[1]; state.frame = 'framed'; }
+    state.index = i;
     state.print = PRINTS[i];
-    state.size = SIZES[1];
-    state.frame = 'framed';
     state.variants = null;
-    var img = dlg.querySelector('.dlg-img');
-    img.classList.remove('has-img');
-    img.innerHTML = '<img src="' + state.print.img + '" alt="' + (state.print.alt || '') + '" onload="this.parentNode.classList.add(\'has-img\')" onerror="this.remove()">';
+    var stage = dlg.querySelector('.dlg-img');
+    var old = stage.querySelector('img');
+    if (old) old.remove();
+    stage.classList.remove('has-img');
+    var img = document.createElement('img');
+    img.alt = state.print.alt || '';
+    img.onload = function () { stage.classList.add('has-img'); };
+    img.onerror = function () { img.remove(); };
+    img.src = state.print.img;
+    stage.insertBefore(img, stage.firstChild);
     dlg.querySelector('.dlg-title').textContent = state.print.title;
     render();
-    dlg.showModal();
+    if (!dlg.open) dlg.showModal();
+    // Warm the neighbours so stepping feels instant
+    [1, -1].forEach(function (d) { new Image().src = PRINTS[(i + d + PRINTS.length) % PRINTS.length].img; });
     if (configured) loadVariants(state.print).then(function (v) {
       if (state.print && state.print.handle === v.handle) { state.variants = v.nodes; render(); }
     }).catch(function () {});

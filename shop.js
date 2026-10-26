@@ -5,7 +5,7 @@ var SHOPIFY = {
   storefrontToken: '', // public Storefront API access token
   apiVersion: '2025-01'
 };
-var INQUIRY_EMAIL = 'hello@thekehoe.com';
+var INQUIRY_EMAIL = 'aaronkehoe@gmail.com';
 
 // Each print is one Shopify product (by handle) with two options:
 // Size (8x10, 11x14, ...) and Frame (Unframed, Framed).

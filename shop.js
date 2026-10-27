@@ -1,7 +1,7 @@
 // Fine art print shop. Checkout runs through Shopify (tax and shipping are
 // calculated there). Until SHOPIFY is filled in, "Buy" falls back to an email inquiry.
 var SHOPIFY = {
-  domain: '',          // e.g. 'the-kehoe.myshopify.com'
+  domain: 'crau0b-9n.myshopify.com',
   storefrontToken: '', // public Storefront API access token
   apiVersion: '2025-01'
 };

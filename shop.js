@@ -2,7 +2,7 @@
 // calculated there). Until SHOPIFY is filled in, "Buy" falls back to an email inquiry.
 var SHOPIFY = {
   domain: 'crau0b-9n.myshopify.com',
-  storefrontToken: '', // public Storefront API access token
+  storefrontToken: '31efaae8fbb12ce13d079bfacae81e7a', // public Storefront API access token (safe to publish)
   apiVersion: '2025-01'
 };
 var INQUIRY_EMAIL = 'aaronkehoe@gmail.com';
